@@ -1,0 +1,79 @@
+\subsection*{pH probe calibration methodology}
+% Text suitable for the Capstone Methodology chapter (SEN0169 software two-point calibration).
+% Session documented: 16 September 2026, approximately 19:19--19:27 AEST.
+% Supporting data: \texttt{ph\_calibration\_timeseries.csv}, \texttt{ph\_calibration\_events.csv}.
+
+\subsubsection{Hardware and signal path}
+A DFRobot SEN0169 industrial pH probe and meter board were used to measure
+reservoir acidity. The meter board outputs an analogue voltage in the
+$0$--$5\,\mathrm{V}$ range. This signal was scaled into the ESP32 ADC input
+range with a discrete resistive divider ($1\,\mathrm{k}\Omega$ /
+$2\,\mathrm{k}\Omega$), so the firmware reconstructs board voltage as
+\begin{equation}
+  V_{\mathrm{board}} = V_{\mathrm{GPIO}} \times 1.5.
+\end{equation}
+Converted $\mathrm{pH}$ is obtained from a linear model
+\begin{equation}
+  \mathrm{pH} = m\,V_{\mathrm{board}} + b,
+\end{equation}
+where the slope $m$ and intercept $b$ are determined by software two-point
+calibration against standard buffers and stored in on-device flash
+(LittleFS). Until a successful calibration is saved, the node uses the
+DFRobot library factory defaults
+($m=-5.6344$, $b=15.4516$).
+
+\subsubsection{Calibration procedure}
+Calibration was performed on 16~September~2026 using the Streamlit dashboard
+wizard, which publishes MQTT commands
+(\texttt{\{"cmd":"ph\_cal","action":\ldots\}}) to the ESP32. The operator
+procedure was:
+\begin{enumerate}
+  \item Rinse the probe in distilled water and blot dry.
+  \item Place the probe in $\mathrm{pH}\,4.00$ buffer and wait for
+        $V_{\mathrm{board}}$ to settle.
+  \item Capture the acid point via the dashboard (\emph{Capture acid}).
+  \item Rinse again, then place the probe in $\mathrm{pH}\,9.18$ buffer and
+        wait for settle.
+  \item Capture the alkali point (\emph{Capture alkali}).
+  \item Save the fit (\emph{Save \& exit}), which writes $m$ and $b$ to
+        LittleFS and resumes normal telemetry.
+  \item Return the probe to distilled rinse water as a qualitative check
+        (distilled water is expected to read slightly acidic).
+\end{enumerate}
+
+From the logged session, acid capture occurred at
+\textbf{19:19:46\,AEST} with
+$V_a = 1.820\,\mathrm{V}$ assigned to $\mathrm{pH}\,4.00$, and alkali
+capture at \textbf{19:23:34\,AEST} with
+$V_b = 2.157\,\mathrm{V}$ assigned to $\mathrm{pH}\,9.18$.
+The firmware fitted the unique line through these two points
+(no imposed slope polarity):
+\begin{equation}
+  m = \frac{9.18-4.00}{V_b-V_a},\qquad
+  b = 4.00 - m\,V_a,
+\end{equation}
+yielding $m \approx 15.370$ and $b \approx -23.970$, saved at
+\textbf{19:24:40\,AEST}. After save, with the probe in distilled rinse water
+(\(\approx\)19:27\,AEST), reported $\mathrm{pH}$ was in the mid-$5$ range,
+consistent with slightly acidic rinse water.
+
+\subsubsection{Data logging used for documentation}
+Continuous sensor samples were retrieved from InfluxDB Cloud
+(\texttt{sensor\_reading} measurement, device \texttt{garden-node-01}) for
+the calibration window. Calibration state markers
+(\texttt{ph\_cal\_message}, pending voltages, fitted $m$ and $b$) were
+aligned from concurrent MQTT telemetry archived by the local dashboard.
+The combined export
+\texttt{ph\_calibration\_timeseries.csv} and event summary
+\texttt{ph\_calibration\_events.csv} were used to generate time-series
+figures of $V_{\mathrm{board}}$ and reported $\mathrm{pH}$, with vertical
+markers at acid capture, alkali capture, save, and the distilled-water
+check.
+
+\subsubsection{Notes for interpretation}
+The two captured voltages in this session produced a positive slope
+($V_b>V_a$ while $\mathrm{pH}_b>\mathrm{pH}_a$). The software intentionally
+accepts the empirical two-point line so that the documented operator
+captures are exactly reproducible. Independent strip/reference checks of
+tank samples remain useful to validate that buffer order and probe settle
+time were correct before relying on the fitted line for closed-loop dosing.

@@ -1,0 +1,72 @@
+pH probe calibration methodology (plain text)
+============================================
+Session: 16 September 2026, ~19:19–19:27 AEST
+Data: ph_calibration_timeseries.csv, ph_calibration_events.csv
+
+Hardware and signal path
+------------------------
+A DFRobot SEN0169 industrial pH probe and meter board measure reservoir
+acidity. The meter board outputs an analogue voltage in the 0–5 V range.
+This signal is scaled into the ESP32 ADC range with a discrete 1 kΩ / 2 kΩ
+resistive divider, so firmware reconstructs board voltage as:
+
+  V_board = V_GPIO × 1.5
+
+Converted pH uses the linear model:
+
+  pH = m * V_board + b
+
+where slope m and intercept b are determined by software two-point
+calibration against standard buffers and stored in on-device flash
+(LittleFS). Until a successful calibration is saved, the node uses the
+DFRobot library factory defaults (m = -5.6344, b = 15.4516).
+
+Calibration procedure
+---------------------
+Calibration was performed on 16 September 2026 using the Streamlit
+dashboard wizard, which publishes MQTT commands
+({"cmd":"ph_cal","action":...}) to the ESP32. The operator procedure was:
+
+  1. Rinse the probe in distilled water and blot dry.
+  2. Place the probe in pH 4.00 buffer and wait for V_board to settle.
+  3. Capture the acid point via the dashboard (Capture acid).
+  4. Rinse again, then place the probe in pH 9.18 buffer and wait.
+  5. Capture the alkali point (Capture alkali).
+  6. Save the fit (Save & exit), writing m and b to LittleFS.
+  7. Return the probe to distilled rinse water as a qualitative check
+     (distilled water is expected to read slightly acidic).
+
+From the logged session:
+  - Acid capture:  19:19:46 AEST, Va = 1.820 V → pH 4.00
+  - Alkali capture: 19:23:34 AEST, Vb = 2.157 V → pH 9.18
+  - Fit saved:     19:24:40 AEST
+
+The firmware fitted the unique line through these two points (no imposed
+slope polarity):
+
+  m = (9.18 - 4.00) / (Vb - Va)
+  b = 4.00 - m * Va
+
+yielding m ≈ 15.370 and b ≈ -23.970. After save, with the probe in
+distilled rinse water (~19:27 AEST), reported pH was in the mid-5 range,
+consistent with slightly acidic rinse water.
+
+Data logging used for documentation
+-----------------------------------
+Continuous sensor samples were retrieved from InfluxDB Cloud
+(sensor_reading measurement, device garden-node-01) for the calibration
+window. Calibration state markers (ph_cal_message, pending voltages,
+fitted m and b) were aligned from concurrent MQTT telemetry archived by
+the local dashboard. The combined export ph_calibration_timeseries.csv
+and event summary ph_calibration_events.csv were used to generate
+time-series figures of V_board and reported pH, with vertical markers at
+acid capture, alkali capture, save, and the distilled-water check.
+
+Notes for interpretation
+------------------------
+The two captured voltages in this session produced a positive slope
+(Vb > Va while pH_b > pH_a). The software intentionally accepts the
+empirical two-point line so that the documented operator captures are
+exactly reproducible. Independent strip/reference checks of tank samples
+remain useful to validate that buffer order and probe settle time were
+correct before relying on the fitted line for closed-loop dosing.

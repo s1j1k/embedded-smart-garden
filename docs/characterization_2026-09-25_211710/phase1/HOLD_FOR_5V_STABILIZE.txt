@@ -1,0 +1,1 @@
+AUTO PAUSE active — no CYCLE / no pH correction until you confirm stable

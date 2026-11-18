@@ -1,0 +1,12 @@
+milestone,time_utc,time_local,hours_since_plain_water
+plain_water_refill,2026-09-30T12:36:55Z,2026-09-30T22:36:55Z,0.0
+tds_ema_settled_on_plain_water,2026-09-30T12:55:56Z,2026-09-30T22:55:56Z,0.32
+first_autonomous_nutrient_dose,2026-09-30T13:05:23Z,2026-09-30T23:05:23Z,0.47
+tds_ema_ge_100ppm,2026-09-30T17:27:11Z,2026-10-01T03:27:11Z,4.84
+tds_ema_ge_300ppm,2026-10-01T04:09:04Z,2026-10-01T14:09:04Z,15.54
+tds_ema_ge_550ppm_deadband,2026-10-02T22:06:58Z,2026-10-03T08:06:58Z,57.5
+tds_ema_ge_600ppm_target,2026-10-02T22:07:28Z,2026-10-03T08:07:28Z,57.51
+ph_ema_in_5.9_6.1_after_tds_in_band,2026-10-02T22:06:58Z,2026-10-03T08:06:58Z,57.5
+pct_time_tds_ema_550_850_after_entry,,,100.0
+pct_time_ph_ema_5.9_6.1_after_entry,,,52.1
+pct_time_ph_ema_5.5_6.5_after_entry,,,84.8

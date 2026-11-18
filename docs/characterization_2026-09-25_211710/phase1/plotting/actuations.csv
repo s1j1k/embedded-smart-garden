@@ -1,0 +1,14 @@
+ts_utc,event,pump,volume_ml,ph,ec,stage,line
+,ec_check,,,5.84,1248.0,vegetative,[CTRL-LOG] ec_check stage=vegetative pH=5.84 EC=1248
+,ph_check,,,5.84,1248.0,vegetative,[CTRL-LOG] ph_check stage=vegetative pH=5.84 EC=1248
+,ec_check,,,5.86,1253.0,vegetative,[CTRL-LOG] ec_check stage=vegetative pH=5.86 EC=1253
+,ph_check,,,5.86,1253.0,vegetative,[CTRL-LOG] ph_check stage=vegetative pH=5.86 EC=1253
+,ec_check,,,3.49,0.0,vegetative,[CTRL-LOG] ec_check stage=vegetative pH=3.49 EC=0
+,dose_start,nutrient,2.0,,,,[STAGE-CTRL] EC dose 2.00 mL
+,ec_check,,,3.05,0.0,vegetative,[CTRL-LOG] ec_check stage=vegetative pH=3.05 EC=0
+,dose_start,nutrient,2.0,,,,[STAGE-CTRL] EC dose 2.00 mL
+,dose_complete,,,,,,[STAGE-CTRL] EC dose complete — waiting for mixing before pH check
+2026-09-25T12:32:20Z,ec_check,,,5.84,1248.0,vegetative,"2026-09-25T12:32:20Z,[CTRL-LOG] ec_check stage=vegetative pH=5.84 EC=1248"
+2026-09-25T12:32:32Z,ph_check,,,5.84,1248.0,vegetative,"2026-09-25T12:32:32Z,[CTRL-LOG] ph_check stage=vegetative pH=5.84 EC=1248"
+2026-09-25T12:52:26Z,ec_check,,,5.86,1253.0,vegetative,"2026-09-25T12:52:26Z,[CTRL-LOG] ec_check stage=vegetative pH=5.86 EC=1253"
+2026-09-25T12:52:38Z,ph_check,,,5.86,1253.0,vegetative,"2026-09-25T12:52:38Z,[CTRL-LOG] ph_check stage=vegetative pH=5.86 EC=1253"

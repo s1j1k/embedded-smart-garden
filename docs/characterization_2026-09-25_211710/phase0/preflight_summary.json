@@ -1,0 +1,35 @@
+{
+    "session_folder":  "C:/Users/sally/Dev/embedded-smart-garden/docs/characterization_2026-09-25_211710",
+    "preflight_utc_local":  "2026-09-25T21:19:59+10:00",
+    "firmware":  "1.5.2",
+    "grow_stage":  "vegetative",
+    "sensors":  {
+                    "ph_filtered":  3.70,
+                    "ph_raw":  3.66,
+                    "tds_ppm":  21,
+                    "water_temp_c":  22.9,
+                    "water_level_pct":  -1,
+                    "water_level_trusted":  false,
+                    "ph_probe_calibrated":  true,
+                    "tds_probe_calibrated":  false
+                },
+    "baseline_tap_estimate":  {
+                                  "note":  "Pre-dose readings this boot; treat as session baseline charge if no dosing yet this fill",
+                                  "ph":  3.70,
+                                  "tds_ppm":  21,
+                                  "water_temp_c":  22.9
+                              },
+    "pump_calibration":  {
+                             "water":  null,
+                             "nutrient_ml_per_burst":  0.405,
+                             "ph_up_ml_per_burst":  0.312,
+                             "ph_down_ml_per_burst":  0.292,
+                             "all_four_present":  false
+                         },
+    "mqtt":  "offline",
+    "influx":  "sensor_reading uploaded (seen on serial)",
+    "ground_truth_volume_ml":  8709.1,
+    "phase0_status":  "GO_WATER_CAL_WAIVED",
+    "go_no_go":  "GO",
+    "water_pump_cal_waived":  true
+}

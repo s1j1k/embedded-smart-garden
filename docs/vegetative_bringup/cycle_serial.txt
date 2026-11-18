@@ -1,0 +1,167 @@
+[INFLUX] sensor_reading uploaded
+[DEBUG] Connecting to MQTT broker 192.168.4.26 -> 192.168.4.26:1883
+[ERROR] MQTT connect failed - state -2 (connect failed (host unreachable / DNS / broker down))
+[HINT] On the Raspberry Pi confirm Mosquitto listens on 0.0.0.0:1883
+       On Pi: ./scripts/setup-pi-mqtt-broker.sh  (from the dashboard repo)
+       Or: sudo systemctl status mosquitto
+[DEBUG] --- Sensor read cycle complete ---
+[STAGE] Manual control cycle requested.
+[WARN] Water level sensor returned no valid readings
+[DEBUG] pH board voltage - 1.963 V; pH raw - 4.37, filtered - 4.37 @ water 22.7 C (Nernst 1.0078)
+[DEBUG] pH board voltage - 1.962 V; pH raw - 4.38, filtered - 4.38 @ water 22.7 C (Nernst 1.0078)
+[CTRL-LOG] ec_check stage=vegetative pH=4.38 EC=24
+[INFLUX] control_event uploaded: ec_check
+[STAGE-CTRL] EC dose 2.00 mL
+[DEBUG] Connecting to MQTT broker 192.168.4.26 -> 192.168.4.26:1883
+[ERROR] MQTT connect failed - state -2 (connect failed (host unreachable / DNS / broker down))
+[HINT] On the Raspberry Pi confirm Mosquitto listens on 0.0.0.0:1883
+       On Pi: ./scripts/setup-pi-mqtt-broker.sh  (from the dashboard repo)
+       Or: sudo systemctl status mosquitto
+
+[DEBUG] --- Sensor read cycle ---
+[DEBUG] System mode - vegetative
+[DEBUG] Reading water level...
+[WARN] Water level sensor returned no valid readings
+[DEBUG] Water level - raw=-1 %, trusted=-1 % [SENSOR FAULT ??? missing or stuck 0%] %
+[DEBUG] Reading DS18B20...
+[DEBUG] DS18B20 result - 22.65 C
+[DEBUG] Reading analog sensors (LDR, TDS, pH)...
+[DEBUG] Raw ADC on pin 34 -> 130
+[DEBUG] Raw ADC on pin 35 -> 67
+[DEBUG] pH board voltage - 1.947 V; pH raw - 4.46, filtered - 4.46 @ water 22.6 C (Nernst 1.0080)
+[DEBUG] LDR ADC - 130
+[DEBUG] TDS ADC - 67
+[DEBUG] TDS 24 ppm @ water 22.6 C (comp coeff 0.953)
+[DEBUG] Reading ambient DHT11...
+[WARN] DHT11 attempt 1 failed
+[WARN] DHT11 attempt 2 failed
+[WARN] DHT11 attempt 3 failed
+[WARN] DHT11 returned no valid readings
+[DEBUG] Reading CO2...
+[WARN] CO2 single-shot start failed (error 1 COMM (I2C))
+[DEBUG] CO2 result - -1 ppm
+[DEBUG] Connecting to MQTT broker 192.168.4.26 -> 192.168.4.26:1883
+[ERROR] MQTT connect failed - state -2 (connect failed (host unreachable / DNS / broker down))
+[HINT] On the Raspberry Pi confirm Mosquitto listens on 0.0.0.0:1883
+       On Pi: ./scripts/setup-pi-mqtt-broker.sh  (from the dashboard repo)
+       Or: sudo systemctl status mosquitto
+[DEBUG] pH board voltage - 1.950 V; pH raw - 4.44, filtered - 4.44 @ water 22.6 C (Nernst 1.0080)
+
+========== SENSOR DATA ==========
+Timestamp (ms) - 102339
+System Mode - vegetative
+Grow Preset - vegetative
+Nutrients Allowed - yes
+Hydroponic Mode - dwc (pH re-dose wait 15 min)
+Chemistry Control - adaptive_P
+Water Temperature - 22.65 C
+LDR ADC - 130
+Water Level - -1 % (stage air-gap line 20 %, raw -1 %, FAULT: sensor missing or stuck 0% ??? auto water off; touch 70 %, safety floor 5 %)
+TDS ADC - 67
+TDS Approx - 24 ppm @ 22.6 C water (comp 0.953; target 800-1200 ppm)
+Nutrient Dose - dose
+pH Voltage - 1.950 V
+pH Approx (raw) - 4.44 @ 22.6 C water (Nernst 1.0080)
+pH Approx (filtered) - 4.44
+pH Target - 5.5 to 5.8
+pH Dose - none
+Ambient Temp - -127.00 C
+Ambient Humidity - -1.00 %
+CO2 - -1 ppm
+Grow Light - on (on), brightness 100%, photoperiod 16 h/day, schedule NTP
+WaterLevelPct:-1 WaterTargetPct:20 WaterMaxPct:70 WaterFloorPct:5 PumpOn:0 DrainOn:0 PumpRunMs:0 PumpStartedMs:0 TDSppm:24 NutrientTdsMin:800 NutrientTdsMax:1200 NutrientDose:1 NutrientDilute:0 pH:4.44 PhTargetMin:5.5 PhTargetMax:5.8 PhDoseUp:0 PhDoseDown:0 CO2ppm:-1
+=================================
+[STORE] Sensor row appended to /sensor_readings.csv (source=esp32)
+[WARN] Skipping MQTT publish - network not ready
+[INFLUX] sensor_reading uploaded
+[DEBUG] Connecting to MQTT broker 192.168.4.26 -> 192.168.4.26:1883
+[ERROR] MQTT connect failed - state -2 (connect failed (host unreachable / DNS / broker down))
+[HINT] On the Raspberry Pi confirm Mosquitto listens on 0.0.0.0:1883
+       On Pi: ./scripts/setup-pi-mqtt-broker.sh  (from the dashboard repo)
+       Or: sudo systemctl status mosquitto
+[DEBUG] --- Sensor read cycle complete ---
+[WARN] Water level sensor returned no valid readings
+[DEBUG] pH board voltage - 1.965 V; pH raw - 4.36, filtered - 4.36 @ water 22.6 C (Nernst 1.0080)
+
+[DEBUG] --- Sensor read cycle ---
+[DEBUG] System mode - vegetative
+[DEBUG] Reading water level...
+[WARN] Water level sensor returned no valid readings
+[DEBUG] Water level - raw=-1 %, trusted=-1 % [SENSOR FAULT ??? missing or stuck 0%] %
+[DEBUG] Reading DS18B20...
+[DEBUG] DS18B20 result - 22.67 C
+[DEBUG] Reading analog sensors (LDR, TDS, pH)...
+[DEBUG] Raw ADC on pin 34 -> 126
+[DEBUG] Raw ADC on pin 35 -> 181
+[DEBUG] pH board voltage - 1.965 V; pH raw - 4.36, filtered - 4.36 @ water 22.7 C (Nernst 1.0079)
+[DEBUG] LDR ADC - 126
+[DEBUG] TDS ADC - 181
+[DEBUG] TDS 63 ppm @ water 22.7 C (comp coeff 0.953)
+[DEBUG] Reading ambient DHT11...
+[WARN] DHT11 attempt 1 failed
+[WARN] DHT11 attempt 2 failed
+[WARN] DHT11 attempt 3 failed
+[WARN] DHT11 returned no valid readings
+[DEBUG] Reading CO2...
+[WARN] CO2 single-shot start failed (error 1 COMM (I2C))
+[DEBUG] CO2 result - -1 ppm
+[DEBUG] Connecting to MQTT broker 192.168.4.26 -> 192.168.4.26:1883
+[ERROR] MQTT connect failed - state -2 (connect failed (host unreachable / DNS / broker down))
+[HINT] On the Raspberry Pi confirm Mosquitto listens on 0.0.0.0:1883
+       On Pi: ./scripts/setup-pi-mqtt-broker.sh  (from the dashboard repo)
+       Or: sudo systemctl status mosquitto
+[DEBUG] pH board voltage - 1.957 V; pH raw - 4.41, filtered - 4.41 @ water 22.7 C (Nernst 1.0079)
+
+========== SENSOR DATA ==========
+Timestamp (ms) - 118739
+System Mode - vegetative
+Grow Preset - vegetative
+Nutrients Allowed - yes
+Hydroponic Mode - dwc (pH re-dose wait 15 min)
+Chemistry Control - adaptive_P
+Water Temperature - 22.67 C
+LDR ADC - 126
+Water Level - -1 % (stage air-gap line 20 %, raw -1 %, FAULT: sensor missing or stuck 0% ??? auto water off; touch 70 %, safety floor 5 %)
+TDS ADC - 181
+TDS Approx - 63 ppm @ 22.7 C water (comp 0.953; target 800-1200 ppm)
+Nutrient Dose - dose
+pH Voltage - 1.957 V
+pH Approx (raw) - 4.41 @ 22.7 C water (Nernst 1.0079)
+pH Approx (filtered) - 4.41
+pH Target - 5.5 to 5.8
+pH Dose - none
+Ambient Temp - -127.00 C
+Ambient Humidity - -1.00 %
+CO2 - -1 ppm
+Grow Light - on (on), brightness 100%, photoperiod 16 h/day, schedule NTP
+WaterLevelPct:-1 WaterTargetPct:20 WaterMaxPct:70 WaterFloorPct:5 PumpOn:0 DrainOn:0 PumpRunMs:0 PumpStartedMs:0 TDSppm:63 NutrientTdsMin:800 NutrientTdsMax:1200 NutrientDose:1 NutrientDilute:0 pH:4.41 PhTargetMin:5.5 PhTargetMax:5.8 PhDoseUp:0 PhDoseDown:0 CO2ppm:-1
+=================================
+[STORE] Sensor row appended to /sensor_readings.csv (source=esp32)
+[WARN] Skipping MQTT publish - network not ready
+[INFLUX] sensor_reading uploaded
+[DEBUG] Connecting to MQTT broker 192.168.4.26 -> 192.168.4.26:1883
+[ERROR] MQTT connect failed - state -2 (connect failed (host unreachable / DNS / broker down))
+[HINT] On the Raspberry Pi confirm Mosquitto listens on 0.0.0.0:1883
+       On Pi: ./scripts/setup-pi-mqtt-broker.sh  (from the dashboard repo)
+       Or: sudo systemctl status mosquitto
+[DEBUG] --- Sensor read cycle complete ---
+[WARN] Water level sensor returned no valid readings
+[DEBUG] pH board voltage - 1.947 V; pH raw - 4.46, filtered - 4.46 @ water 22.7 C (Nernst 1.0079)
+
+[DEBUG] --- Sensor read cycle ---
+[DEBUG] System mode - vegetative
+[DEBUG] Reading water level...
+[WARN] Water level sensor returned no valid readings
+[DEBUG] Water level - raw=-1 %, trusted=-1 % [SENSOR FAULT ??? missing or stuck 0%] %
+[DEBUG] Reading DS18B20...
+[DEBUG] DS18B20 result - 22.69 C
+[DEBUG] Reading analog sensors (LDR, TDS, pH)...
+[DEBUG] Raw ADC on pin 34 -> 97
+[DEBUG] Raw ADC on pin 35 -> 230
+[DEBUG] pH board voltage - 1.953 V; pH raw - 4.43, filtered - 4.43 @ water 22.7 C (Nernst 1.0078)
+[DEBUG] LDR ADC - 97
+[DEBUG] TDS ADC - 230
+[DEBUG] TDS 79 ppm @ water 22.7 C (comp coeff 0.954)
+[DEBUG] Reading ambient DHT11...
+[WARN] DHT11 attempt 1 failed
+

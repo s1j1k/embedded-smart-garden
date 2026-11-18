@@ -1,0 +1,3 @@
+,result,table,_time,_start,_stop,_measurement,device,event,stage,cumulative_session_ml,ec_before,ec_dose_ml,gain_down,gain_ec,gain_up,ph_before,recorded_at_utc,target_depth_mm,uptime_ms,water_temp_c
+,_result,0,2026-09-22T09:13:28.35Z,2026-09-21T23:11:47.048943108Z,2026-09-22T23:11:47.048943108Z,control_event,garden-node-01,ec_check,vegetative,0,24,2,0.2,0.004,0.2,4.378,2026-09-22T09:13:28Z,50,86575,22.69
+

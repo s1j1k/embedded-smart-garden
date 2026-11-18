@@ -1,0 +1,13 @@
+name: host tests
+
+on: [push, pull_request]
+
+jobs:
+  control-logic:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        run: g++ -std=c++17 -Wall -I tests/host -I shared tests/host/control_logic_test.cpp -o control_logic_test
+      - name: Run
+        run: ./control_logic_test

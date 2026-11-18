@@ -1,0 +1,66 @@
+[DEBUG] Priority water poll - trusted level 75% is above net-pot touch 65%
+[DEBUG] pH board voltage - 2.184 V; pH raw - 9.61, filtered - 9.61, ema - 9.62 @ water 22.8 C (Nernst 1.0074)
+[DEBUG] CSV replay: publishing up to 200 buffered rows (bytes=750)
+[DEBUG] CSV replay done: published=1, remaining=0
+
+[DEBUG] --- Sensor read cycle ---
+[DEBUG] System mode - vegetative
+[DEBUG] Reading water level...
+[DEBUG] Water level - raw=71 %, trusted=71 %
+[DEBUG] Reading DS18B20...
+[DEBUG] DS18B20 result - 22.81 C
+[DEBUG] Reading analog sensors (LDR, TDS, pH)...
+[DEBUG] Raw ADC on pin 34 -> 2667
+[DEBUG] Raw ADC on pin 35 -> 2733
+[DEBUG] pH board voltage - 2.183 V; pH raw - 9.60, filtered - 9.60, ema - 9.62 @ water 22.8 C (Nernst 1.0074)
+[DEBUG] LDR ADC - 2667
+[DEBUG] TDS ADC - 2733
+[DEBUG] TDS 1124 ppm, ema 1122 ppm @ water 22.8 C (comp coeff 0.956)
+[DEBUG] Reading ambient DHT11...
+[DEBUG] DHT11 attempt 1 -> temp=25.50 C, humidity=52.00 %
+[DEBUG] DHT11 attempt 2 -> temp=25.50 C, humidity=50.00 %
+[DEBUG] DHT11 attempt 3 -> temp=25.50 C, humidity=52.00 %
+[DEBUG] Reading CO2...
+[DEBUG] CO2 raw bytes H=0x4 L=0x7 → uint16=1031 int16=1031
+[DEBUG] CO2 -> 1031 ppm (single-shot, uint16)
+[DEBUG] CO2 result - 1031 ppm
+[DEBUG] pH board voltage - 2.184 V; pH raw - 9.62, filtered - 9.62, ema - 9.62 @ water 22.8 C (Nernst 1.0074)
+
+========== SENSOR DATA ==========
+Timestamp (ms) - 4007329
+Uptime - 4007 s; boots=1; brownouts=0; last_reset=power_on
+Supply - free_heap=173440 B; wifi_rssi=-49 dBm
+System Mode - vegetative
+Grow Preset - vegetative
+Nutrients Allowed - yes
+Hydroponic Mode - dwc (pH re-dose wait 15 min)
+Chemistry Control - adaptive_P
+Water Temperature - 22.81 C
+LDR ADC - 2667
+Water Level - 71 % (stage air-gap line 15 %, raw 71 %; touch 65 %, safety floor 5 %)
+TDS ADC - 2733
+TDS Approx - 1124 ppm, ema 1122 ppm @ 22.8 C water (comp 0.956; target 600-800 ppm)
+Nutrient Dose - none
+pH Voltage - 2.184 V
+pH Approx (raw) - 9.62 @ 22.8 C water (Nernst 1.0074)
+pH Approx (filtered) - 9.62, ema 9.62
+pH Target - 6.0 to 6.0
+pH Dose - none
+Ambient Temp - 25.50 C
+Ambient Humidity - 51.33 %
+CO2 - 1031 ppm
+Grow Light - on (on), brightness 100%, photoperiod 16 h/day, schedule NTP
+WaterLevelPct:71 WaterTargetPct:15 WaterMaxPct:65 WaterFloorPct:5 PumpOn:0 DrainOn:0 PumpRunMs:0 PumpStartedMs:0 TDSppm:1124 NutrientTdsMin:600 NutrientTdsMax:800 NutrientDose:0 NutrientDilute:0 pH:9.62 PhEma:9.62 TdsEma:1122.0 PhTargetMin:6.0 PhTargetMax:6.0 PhDoseUp:0 PhDoseDown:0 CO2ppm:1031
+=================================
+[DEBUG] CSV header written
+[STORE] Sensor row appended to /sensor_readings.csv (source=esp32, water_level_pct=71)
+[DEBUG] MQTT telemetry published (3517 bytes)
+[ALERT] MQTT smart-garden/garden-node-01/alerts — uncal:water 
+[INFLUX] Write failed HTTP -1 (attempt 1/3) (connection refused ssl -1 ERROR - Generic error heap 164260)
+[INFLUX] holding 4/4 unsent line(s) for the next write
+[DEBUG] --- Sensor read cycle complete ---
+[DUMP] BEGIN /sensor_readings.csv (750 bytes)
+device_id,recorded_at_utc,uptime_ms,source,grow_stage,water_temp_c,light_adc,water_level_pct,water_level_raw_pct,water_target_pct,water_max_pct,tds_adc,tds_ppm,nutrient_tds_min,nutrient_tds_max,nutrient_dose,ph_voltage,ph,ph_filtered,ph_target_min,ph_target_max,ph_dose,co2_ppm,ambient_temp_c,ambient_humidity_pct,water_pump_on,drain_pump_on,nutrient_pump_on,ph_up_pump_on,ph_down_pump_on,grow_light_on,grow_light_brightness_pct,grow_light_animating,reset_reason,boot_count,brownout_count,rail_mv,free_heap_b,wifi_rssi_dbm,ph_ema,tds_ppm_ema
+garden-node-01,2026-09-30T07:36:45Z,4007499,esp32,vegetative,22.81,2667,71,71,15,65,2733,1124,600,800,none,2.184,9.62,9.62,6.0,6.0,none,1031,25.5,51.3,0,0,0,0,0,1,100,0,power_on,1,0,,173440,-49,9.62,1122.0
+
+[DUMP] END /sensor_readings.csv

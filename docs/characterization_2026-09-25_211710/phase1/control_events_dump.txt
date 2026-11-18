@@ -1,0 +1,46 @@
+[DEBUG] DS18B20 result - 22.87 C
+[DEBUG] Reading analog sensors (LDR, TDS, pH)...
+[DEBUG] Raw ADC on pin 34 -> 1822
+[DEBUG] Raw ADC on pin 35 -> 2886
+[DEBUG] pH board voltage - 1.962 V; pH raw - 6.18, filtered - 6.18 @ water 22.9 C (Nernst 1.0072)
+[DEBUG] LDR ADC - 1822
+[DEBUG] TDS ADC - 2886
+[DEBUG] TDS 1242 ppm @ water 22.9 C (comp coeff 0.957)
+[DEBUG] Reading ambient DHT11...
+[DEBUG] DHT11 attempt 1 -> temp=24.10 C, humidity=64.00 %
+[DEBUG] DHT11 attempt 2 -> temp=24.10 C, humidity=60.00 %
+[DEBUG] DHT11 attempt 3 -> temp=24.10 C, humidity=64.00 %
+[DEBUG] Reading CO2...
+[DEBUG] CO2 raw bytes H=0x6 L=0xE1 ??? uint16=1761 int16=1761
+[DEBUG] CO2 -> 1761 ppm (single-shot, uint16)
+[DEBUG] CO2 result - 1761 ppm
+[DEBUG] pH board voltage - 1.962 V; pH raw - 6.19, filtered - 6.20 @ water 22.9 C (Nernst 1.0072)
+
+========== SENSOR DATA ==========
+Timestamp (ms) - 195602
+Uptime - 195 s; boots=1; brownouts=0; last_reset=power_on
+Supply - free_heap=183708 B; wifi_rssi=-58 dBm
+System Mode - vegetative
+Grow Preset - vegetative
+Nutrients Allowed - yes
+Hydroponic Mode - dwc (pH re-dose wait 15 min)
+Chemistry Control - adaptive_P
+Water Temperature - 22.87 C
+LDR ADC - 1822
+Water Level - -1 % (stage air-gap line 20 %, raw -1 %, FAULT: sensor missing or stuck 0% ??? auto water off; touch 70 %, safety floor 5 %)
+TDS ADC - 2886
+TDS Approx - 1242 ppm @ 22.9 C water (comp 0.957; target 800-1200 ppm)
+Nutrient Dose - none
+pH Voltage - 1.962 V
+pH Approx (raw) - 6.19 @ 22.9 C water (Nernst 1.0072)
+pH Approx (filtered) - 6.20
+pH Target - 5.5 to 5.8
+pH Dose - none
+Ambient Temp - 24.10 C
+Ambient Humidity - 62.67 %
+CO2 - 1761 ppm
+Grow Light - on (on), brightness 100%, photoperiod 16 h/day, schedule NTP
+WaterLevelPct:-1 WaterTargetPct:20 WaterMaxPct:70 WaterFloorPct:5 PumpOn:0 DrainOn:0 PumpRunMs:0 PumpStartedMs:0 TDSppm:1242 NutrientTdsMin:800 NutrientTdsMax:1200 NutrientDose:0 NutrientDilute:0 pH:6.19 PhTargetMin:5.5 PhTargetMax:5.8 PhDoseUp:0 PhDoseDown:0 CO2ppm:1761
+=================================
+[STORE] Sensor row appended to /sensor_readings.csv (source=esp32)
+

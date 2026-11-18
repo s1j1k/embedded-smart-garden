@@ -1,0 +1,11 @@
+{
+  "phase": 1,
+  "local_time": "2026-09-26T03:10:15+10:00",
+  "elapsed_s": 16693,
+  "ph": 5.61,
+  "tds_ppm": 1255.0,
+  "hold_s": 0,
+  "cycles": 10,
+  "tds_relaxed_hold": false,
+  "end_reason": null
+}

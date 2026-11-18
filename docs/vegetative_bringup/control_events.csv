@@ -1,0 +1,2 @@
+recorded_at_utc,uptime_ms,event,stage,current_level_pct,current_drawdown_mm,target_depth_mm,ec_before,ec_dose_ml,ec_after,ph_before,ph_dose_dir,ph_dose_ml,ph_after,gain_up,gain_down,gain_ec,water_temp_c,cumulative_session_ml,alert_flags
+2026-09-22T09:13:28Z,86575,ec_check,vegetative,,,50,24,2.00,,4.38,,,,0.2000,0.2000,0.004000,22.69,0.00,

@@ -1,0 +1,54 @@
+item,value
+quiet window start (UTC),2026-10-04 01:32:49+00:00
+quiet window length (h),20.45722222222222
+closed-form vs scipy Butterworth-2 max coeff diff,2.220446049250313e-16
+pH burst noise std (pH),0.014324335572907755
+pH burst noise lag-1 autocorrelation,0.679759653686113
+pH EMA output noise std (pH),0.009161609466773158
+pH Butterworth-2 2 mHz output noise std (pH),0.010925723994880294
+pH share of burst variance above 5 mHz (white floor),0.029148932872021416
+TDS burst noise std (ppm),0.5143424565901916
+TDS burst noise lag-1 autocorrelation,0.4260638291861848
+TDS EMA output noise std (ppm),0.20221722060540392
+TDS Butterworth-2 2 mHz output noise std (ppm),0.25621027018702486
+TDS share of burst variance above 5 mHz (white floor),0.49173779999520234
+pH chosen Butterworth-2: t95 (min),3.8333333333333335
+pH chosen Butterworth-2: output noise (pH),0.0097900912323602
+pH EMA 30 s: t95 (min),1.3333333333333333
+pH EMA 30 s: output noise (pH),0.010574491223852888
+pH EMA 3 min: t95 (min),8.833333333333334
+pH EMA 3 min: output noise (pH),0.008301438258794277
+pH Butterworth-2 equal-noise cutoff (mHz),0.8039414229517249
+pH Butterworth-2 equal-noise t95 (min),9.666666666666666
+pH Butterworth-2 equal-noise overshoot (%),4.3247467103898485
+TDS chosen Butterworth-2: t95 (min),3.8333333333333335
+TDS chosen Butterworth-2: output noise (ppm),0.25707162826437907
+TDS EMA 30 s: t95 (min),1.3333333333333333
+TDS EMA 30 s: output noise (ppm),0.32017964950984873
+TDS EMA 3 min: t95 (min),8.833333333333334
+TDS EMA 3 min: output noise (ppm),0.20202756536642613
+TDS Butterworth-2 equal-noise cutoff (mHz),0.8724996348404485
+TDS Butterworth-2 equal-noise t95 (min),8.833333333333334
+TDS Butterworth-2 equal-noise overshoot (%),4.325088853733972
+pH dose step: EMA within 0.1 of final at (min),13.133333333333333
+pH dose step: Butterworth-2 within 0.1 of final at (min),10.116666666666667
+pH dose step: EMA 30 s within 0.1 of final at (min),8.766666666666667
+pH dose step: burst reading within 0.1 of final at (min),8.1
+TDS dose step: EMA within 10 of final at (min),10.0
+TDS dose step: Butterworth-2 within 10 of final at (min),4.983333333333333
+TDS dose step: EMA 30 s within 10 of final at (min),3.3
+TDS dose step: burst reading within 10 of final at (min),2.966666666666667
+"burst average gain at 50 Hz, 5.0 ms spacing",4.3297802811774664e-17
+"burst average gain at 50 Hz, 5.2 ms spacing",0.0413043902010766
+water_temp_c sample noise (std diff/sqrt2),0.014312673542924238
+water_temp_c smallest step,0.021
+water_level_raw_pct sample noise (std diff/sqrt2),0.7756141955371233
+water_level_raw_pct smallest step,1.0
+ambient_temp_c sample noise (std diff/sqrt2),0.020251706679975258
+ambient_temp_c smallest step,0.033
+ambient_humidity_pct sample noise (std diff/sqrt2),0.16758914825035337
+ambient_humidity_pct smallest step,0.333
+co2_ppm sample noise (std diff/sqrt2),2.4193815718105576
+co2_ppm smallest step,1.0
+light_adc sample noise (std diff/sqrt2),24.631810478508985
+light_adc smallest step,1.0

@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 430" font-family="Helvetica, Arial, sans-serif">
+  <!-- Top view of the reservoir, positions in mm from the lid drawing (420 x 318 mm), offset (40, 50). Front edge at the bottom. -->
+  <style>
+    .lbl { font-size: 11px; fill: #222; }
+    .small { font-size: 9.5px; fill: #444; }
+    .title { font-size: 14px; font-weight: bold; fill: #111; }
+  </style>
+  <rect width="500" height="430" fill="#ffffff"/>
+  <text x="250" y="24" text-anchor="middle" class="title">Air stone layout, top view (18 Oct 2026)</text>
+  <text x="250" y="42" text-anchor="middle" class="small">BACK of tank</text>
+
+  <!-- Tank / lid outline -->
+  <rect x="40" y="50" width="420" height="318" rx="20" fill="#eef6fb" stroke="#333" stroke-width="1.5"/>
+
+  <!-- Bubble-free front strip (50 mm) -->
+  <rect x="40" y="318" width="420" height="50" fill="#fff3d6" stroke="none"/>
+  <path d="M60,318 H440" stroke="#d9a400" stroke-width="1" stroke-dasharray="5 4"/>
+  <text x="250" y="312" text-anchor="middle" class="small" fill="#8a6a00">keep bubbles out of this strip (about 50 mm)</text>
+
+  <!-- Net pots -->
+  <circle cx="143" cy="209" r="28" fill="#dff0d8" stroke="#3b7a2a" stroke-width="1.5"/>
+  <text x="143" y="213" text-anchor="middle" class="small">basil</text>
+  <circle cx="351" cy="209" r="28" fill="#dff0d8" stroke="#3b7a2a" stroke-width="1.5"/>
+  <text x="351" y="213" text-anchor="middle" class="small">lettuce</text>
+
+  <!-- Probe row (front edge) -->
+  <circle cx="105" cy="339" r="15" fill="#ffffff" stroke="#b03030" stroke-width="1.5"/>
+  <text x="105" y="343" text-anchor="middle" class="lbl">pH</text>
+  <circle cx="176" cy="339" r="7" fill="#ffffff" stroke="#555" stroke-width="1.2"/>
+  <text x="176" y="362" text-anchor="middle" class="small">T</text>
+  <rect x="233" y="335" width="21" height="7" fill="#ffffff" stroke="#555" stroke-width="1.2"/>
+  <text x="243" y="362" text-anchor="middle" class="small">WL</text>
+  <circle cx="310" cy="339" r="7" fill="#ffffff" stroke="#b03030" stroke-width="1.5"/>
+  <text x="310" y="362" text-anchor="middle" class="small">EC</text>
+  <circle cx="390" cy="339" r="13" fill="#ffffff" stroke="#333" stroke-width="1.5"/>
+  <text x="390" y="343" text-anchor="middle" class="lbl">P</text>
+  <text x="430" y="352" class="small" text-anchor="start">dosing</text>
+  <text x="430" y="363" class="small" text-anchor="start">+ air in</text>
+
+  <!-- Lines from port P along the bottom to the back-right corner -->
+  <path d="M390,326 C392,250 420,140 400,100" fill="none" stroke="#7a4fb3" stroke-width="2"/>
+  <path d="M386,326 C330,250 240,120 105,100" fill="none" stroke="#2f7fc1" stroke-width="2" stroke-dasharray="6 3"/>
+  <path d="M394,326 C400,230 410,140 405,100" fill="none" stroke="#2f7fc1" stroke-width="2" stroke-dasharray="6 3"/>
+
+  <!-- Dosing outlets, back right -->
+  <circle cx="380" cy="92" r="4" fill="#7a4fb3"/>
+  <circle cx="390" cy="88" r="4" fill="#7a4fb3"/>
+  <circle cx="400" cy="92" r="4" fill="#7a4fb3"/>
+  <circle cx="410" cy="88" r="4" fill="#7a4fb3"/>
+  <text x="395" y="74" text-anchor="middle" class="small" fill="#5a3590">dosing outlets</text>
+
+  <!-- Air stone 1, back right, with the outlets -->
+  <rect x="380" y="98" width="40" height="12" rx="6" fill="#9cc8ea" stroke="#2f7fc1" stroke-width="1.5"/>
+  <circle cx="390" cy="122" r="3" fill="none" stroke="#2f7fc1"/>
+  <circle cx="402" cy="130" r="4" fill="none" stroke="#2f7fc1"/>
+  <circle cx="412" cy="121" r="2.5" fill="none" stroke="#2f7fc1"/>
+  <text x="400" y="148" text-anchor="middle" class="lbl">Stone 1</text>
+  <text x="400" y="160" text-anchor="middle" class="small">mixes each dose</text>
+
+  <!-- Air stone 2, back left -->
+  <rect x="85" y="94" width="40" height="12" rx="6" fill="#9cc8ea" stroke="#2f7fc1" stroke-width="1.5"/>
+  <circle cx="95" cy="118" r="3" fill="none" stroke="#2f7fc1"/>
+  <circle cx="107" cy="126" r="4" fill="none" stroke="#2f7fc1"/>
+  <circle cx="117" cy="117" r="2.5" fill="none" stroke="#2f7fc1"/>
+  <text x="105" y="144" text-anchor="middle" class="lbl">Stone 2</text>
+  <text x="105" y="156" text-anchor="middle" class="small">oxygen + circulation</text>
+
+  <!-- Circulation hint -->
+  <path d="M150,110 C230,70 290,70 360,110" fill="none" stroke="#2f7fc1" stroke-width="1" stroke-dasharray="2 4" marker-end="url(#a)"/>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2f7fc1"/></marker></defs>
+
+  <!-- Distances -->
+  <text x="250" y="398" text-anchor="middle" class="small">pH to EC about 205 mm. Both stones about 220 mm behind the probe row.</text>
+  <text x="250" y="414" text-anchor="middle" class="small">FRONT (probe row). Air line and dosing lines enter through P and run along the bottom.</text>
+</svg>

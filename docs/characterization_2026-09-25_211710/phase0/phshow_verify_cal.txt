@@ -1,0 +1,123 @@
+
+[DEBUG] Smart Hydroponic Garden ??? sensor monitor starting
+[DEBUG] Firmware version - 1.5.2
+[DEBUG] System mode - idle
+[DEBUG] Grow preset - idle
+[DEBUG] Hydroponic mode - dwc (pH re-dose wait 15 min)
+[DEBUG] Chemistry control - adaptive_P
+[DEBUG] Boot: sensor baseline capture (MODE PH_BASELINE when ready for pH control)
+[DEBUG] EC dosing from VEGETATIVE; SEEDLING is pH + drawdown only
+[DEBUG] Initialising pumps (all stopped)
+[DEBUG] Pumps attached on GPIO 18, 19, 23, 17 ??? all at STOP (90??)
+[DEBUG] LittleFS mounted ??? CSV path - /sensor_readings.csv; total=1966080 B, used=712704 B, free=1253376 B
+[DEBUG] No stored water level yet; trusting readings immediately
+[DEBUG] No net-pot touch file yet ??? use water_fill_cal TOUCH/DONE
+[DEBUG] Using default net-pot touch 70% until water_fill_cal saves one
+[DEBUG] Water ceiling (touch) 70%; safety floor 40% (115 mm air gap); stage refill-to 70% (0 mm drawdown target)
+[CAL] Stored pump calibration:
+  water: not calibrated
+  nutrient: 0.405 mL / 500 ms burst
+  ph_up: 0.312 mL / 500 ms burst
+  ph_down: 0.292 mL / 500 ms burst
+[STOCK] Dosing bottles (estimate from calibration):
+  water: 1000.0 / 1000 mL (100%)
+  nutrient: 991.3 / 1000 mL (99%)
+  ph_up: 591.8 / 600 mL (99%)
+  ph_down: 588.1 / 600 mL (98%)
+[STOCK] Type FILL after you replace a bottle. SETCAP / SETREM to adjust.
+[PH-CAL] Probe calibration ready (LittleFS or baked 2026-09-16 breadboard line)
+[PH-CAL] --- probe calibration ---
+  state=idle  calibrated=yes
+  slope=15.3696  offset=-23.9698
+  water T=25.0 C  Nernst factor=1.0000
+  live board V=nan  ??? pH nan (raw) / nan (temp-comp)
+  stored acid V=1.8198 @ pH 4.00
+  stored alkali V=2.1568 @ pH 9.18
+[TDS-CAL] Uncalibrated ??? kValue=1.0 (run ENTERTDS with salt water / 707 ppm)
+[TDS-CAL] --- Grove TDS probe calibration ---
+  state=idle  calibrated=no (k=1.0 defaults)
+  kValue=1.0000
+[STAGE] Restored persisted stage: vegetative
+[STAGE] Boot hold ??? no auto dose until check interval elapses (pH 120 min, EC 120 min, level 120 min). Type CYCLE to run one control cycle now.
+[ALERT] Pumps need calibration (will publish to Pi): uncal:water
+[ALERT] Type CAL on Serial (cup on the outlet) before ENABLE_PUMPS=1.
+
+========== SERIAL COMMANDS ==========
+HELP              list commands
+VERSION           firmware version (now: 1.5.2)
+MODE              show mode (now: vegetative)
+MODE BASELINE     sensor-only logging (no pumps) ??? probe drift capture
+MODE IDLE         no stage set ??? sensors only until you choose a stage
+MODE FILL         manual fill ??? CONFIRM records fill_0 ??? PH_BASELINE
+CONFIRM           FILL: ??? PH_BASELINE | BASELINE: record fill_0 only
+BASELINE START    mark capture window start (Influx + flash)
+BASELINE END      mark capture complete
+INFLUX            print cloud upload status
+INFLUX TEST       send one test point to InfluxDB now
+POWER             brownout / uptime / rail sense / heap / RSSI
+MQTT              print broker / client status
+MQTT CONNECT      try MQTT once (no background retries)
+DUMP CTRL         print /control_events.csv (pH/EC/level adjustments)
+DUMP SENSORS      print /sensor_readings.csv
+MODE SEEDLING     0 mm drawdown; pH only
+MODE VEGETATIVE   50 mm drawdown; EC then pH
+MODE HARVEST      100 mm drawdown; EC then pH (gentler)
+CYCLE             trigger one control cycle now
+ENTERPH           start SEN0169 two-point probe calibration
+CALPH ACID        capture buffer 4.00 (averaged board volts)
+CALPH ALKALI      capture buffer 9.18
+EXITPH            fit slope/offset, save to LittleFS, exit
+PHABORT           cancel probe calibration (keep last save)
+PHSHOW            print live V + slope/offset
+PHRESTORE         rewrite 2026-09-16 breadboard cal to LittleFS
+PHCLEAR           same as PHRESTORE (back to breadboard line)
+ENTERTDS          start Grove TDS single-point calibration
+CALTDS <ppm>      capture ref (salt water / pen / 707 standard)
+EXITTDS           save kValue to LittleFS, exit
+TDSABORT          cancel TDS calibration (keep last save)
+TDSSHOW           print live V + kValue + ppm
+TDSCLEAR          erase saved TDS cal (back to k=1.0)
+TDSOBS            pH-salt TDS observer (raw vs nutrient ppm)
+SETKAPPA UP|DOWN <v>  salt ?? (ppm??L/mL); marks measured
+TDSCORR ON|OFF    use TDS_nutrient in EC control loop
+RESETPHSALT       clear pH-reagent accumulators (after flush)
+CYCLE / TRIGGER   run one control cycle now
+AUTO PAUSE|RESUME hold/resume auto dosing (stage unchanged)
+DOSE PH_UP 0.15   metered operator dose (requires CAL; mL)
+DOSE PH_DOWN|NUTRIENT|WATER <ml>
+CONFIRM / FILLED  save hand-fill level as net-pot touch ??? PRIMING
+CAL               calibrate all 4 pumps, one by one
+CAL WATER         1 L top-up jug (continuous run)
+CAL NUTRIENT      1 L bottle (500 ms bursts)
+CAL PH_UP         600 mL bottle (500 ms bursts)
+CAL PH_DOWN       600 mL bottle (500 ms bursts)
+CAL SHOW          print stored calibration
+CAL CLEAR         erase stored rates (keeps bottle levels)
+STOCK             print remaining mL in each bottle
+FILL              mark all bottles full (after you replace them)
+FILL WATER        or NUTRIENT / PH_UP / PH_DOWN
+SETCAP WATER 1000 change programmed bottle size (mL)
+SETREM WATER 800  set remaining estimate (mL)
+PRIME WATER       soft-prime: pause auto dosing, run until STOP
+PRIME PH_UP       (or NUTRIENT / PH_DOWN) ??? sensors stay online
+PRIME             during CAL only: prime the current cal pump
+STOP              stop soft-prime / CAL prime / fill pump
+YES               start the cup run (or a confirm replay)
+RETRY / SKIP / ABORT
+Then enter the measured mL after each run (e.g. 2.5)
+=====================================
+
+========== STAGE: vegetative ==========
+Vegetative: 50 mm drawdown; EC dose then pH correction.
+[DEBUG] pH ADC GPIO 32 @ ADC_11db; board_V = gpio_V ?? 1.500
+[DEBUG] I2C started on SDA=21 SCL=22
+[DEBUG] Scanning I2C bus...
+[DEBUG] I2C device found at 0x28
+[DEBUG] Found 1 I2C device(s)
+[DEBUG] DS18B20 on GPIO 4
+[DEBUG] DHT11 ambient sensor on GPIO 16 (external 10k pull-up)
+[DEBUG] Starting CO2 sensor...
+[DEBUG] CO2 sensor ready (single-shot on each sensor cycle)
+[POWER] Reset reason - power_on (1); boot_count=1; brownout_count=0; free_heap=250704 B
+[POWER] Rail ADC sense disabled (POWER_SENSE_PIN=-1). Wire VIN??2 to a free ADC GPIO to monitor supply voltage.
+

@@ -1,0 +1,33 @@
+[DEBUG] Reading CO2...
+[DEBUG] CO2 raw bytes H=0x4 L=0xB8 → uint16=1208 int16=1208
+[DEBUG] CO2 -> 1208 ppm (single-shot, uint16)
+[DEBUG] CO2 result - 1208 ppm
+[DEBUG] pH board voltage - 1.968 V; pH raw - 6.27, filtered - 6.26 @ water 21.9 C (Nernst 1.0104)
+
+========== SENSOR DATA ==========
+Timestamp (ms) - 115951582
+Uptime - 115951 s; boots=1; brownouts=0; last_reset=power_on
+Supply - free_heap=182664 B; wifi_rssi=-63 dBm
+System Mode - vegetative
+Grow Preset - vegetative
+Nutrients Allowed - yes
+Hydroponic Mode - dwc (pH re-dose wait 15 min)
+Chemistry Control - adaptive_P
+Water Temperature - 21.94 C
+LDR ADC - 967
+Water Level - -1 % (stage air-gap line 20 %, raw -1 %, FAULT: sensor missing or stuck 0% — auto water off; touch 70 %, safety floor 5 %)
+TDS ADC - 2889
+TDS Approx - 1294 ppm @ 21.9 C water (comp 0.939; target 800-1200 ppm)
+Nutrient Dose - none
+pH Voltage - 1.968 V
+pH Approx (raw) - 6.27 @ 21.9 C water (Nernst 1.0104)
+pH Approx (filtered) - 6.26
+pH Target - 5.5 to 5.8
+pH Dose - none
+Ambient Temp - 23.40 C
+Ambient Humidity - 49.67 %
+CO2 - 1208 ppm
+Grow Light - on (on), brightness 100%, photoperiod 16 h/day, schedule NTP
+WaterLevelPct:-1 WaterTargetPct:20 WaterMaxPct:70 WaterFloorPct:5 PumpOn:0 DrainOn:0 PumpRunMs:0 PumpStartedMs:0 TDSppm:1294 NutrientTdsMin:800 NutrientTdsMax:1200 NutrientDose:0 NutrientDilute:0 pH:6.27 PhTargetMin:5.5 PhTargetMax:5.8 PhDoseUp:0 PhDoseDown:0 CO2ppm:1208
+=================================
+[STORE] Sensor row appended to /sensor_readings.csv (source=esp32)

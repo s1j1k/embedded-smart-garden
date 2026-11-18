@@ -1,0 +1,14 @@
+,result,table,_start,_stop,_time,_value,_field,_measurement,capture,device,stage
+,_result,0,2026-09-21T23:11:45.211550956Z,2026-09-22T23:11:45.211550956Z,2026-09-21T23:11:56.232Z,6.897,ph,sensor_reading,baseline,garden-node-01,sensor_baseline
+,_result,0,2026-09-21T23:11:45.211550956Z,2026-09-22T23:11:45.211550956Z,2026-09-21T23:12:12.363Z,6.893,ph,sensor_reading,baseline,garden-node-01,sensor_baseline
+,_result,0,2026-09-21T23:11:45.211550956Z,2026-09-22T23:11:45.211550956Z,2026-09-21T23:12:28.546Z,6.793,ph,sensor_reading,baseline,garden-node-01,sensor_baseline
+,_result,0,2026-09-21T23:11:45.211550956Z,2026-09-22T23:11:45.211550956Z,2026-09-21T23:12:44.752Z,6.832,ph,sensor_reading,baseline,garden-node-01,sensor_baseline
+,_result,0,2026-09-21T23:11:45.211550956Z,2026-09-22T23:11:45.211550956Z,2026-09-21T23:13:00.855Z,6.753,ph,sensor_reading,baseline,garden-node-01,sensor_baseline
+
+,result,table,_start,_stop,_time,_value,_field,_measurement,device,stage
+,_result,1,2026-09-21T23:11:45.211550956Z,2026-09-22T23:11:45.211550956Z,2026-09-22T09:12:28.859Z,4.338,ph,sensor_reading,garden-node-01,vegetative
+,_result,1,2026-09-21T23:11:45.211550956Z,2026-09-22T23:11:45.211550956Z,2026-09-22T09:12:45.298Z,4.385,ph,sensor_reading,garden-node-01,vegetative
+,_result,1,2026-09-21T23:11:45.211550956Z,2026-09-22T23:11:45.211550956Z,2026-09-22T09:13:06.6Z,4.386,ph,sensor_reading,garden-node-01,vegetative
+,_result,1,2026-09-21T23:11:45.211550956Z,2026-09-22T23:11:45.211550956Z,2026-09-22T09:13:23.098Z,4.359,ph,sensor_reading,garden-node-01,vegetative
+,_result,1,2026-09-21T23:11:45.211550956Z,2026-09-22T23:11:45.211550956Z,2026-09-22T09:13:44.273Z,4.444,ph,sensor_reading,garden-node-01,vegetative
+

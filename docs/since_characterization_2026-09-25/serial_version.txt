@@ -1,0 +1,47 @@
+[DEBUG] DHT11 attempt 2 -> temp=23.40 C, humidity=47.00 %
+[DEBUG] DHT11 attempt 3 -> temp=23.40 C, humidity=51.00 %
+[DEBUG] Reading CO2...
+[DEBUG] CO2 raw bytes H=0x4 L=0xB6 → uint16=1206 int16=1206
+[DEBUG] CO2 -> 1206 ppm (single-shot, uint16)
+[DEBUG] CO2 result - 1206 ppm
+[DEBUG] pH board voltage - 1.973 V; pH raw - 6.34, filtered - 6.33 @ water 21.9 C (Nernst 1.0106)
+
+========== SENSOR DATA ==========
+Timestamp (ms) - 116108367
+Uptime - 116108 s; boots=1; brownouts=0; last_reset=power_on
+Supply - free_heap=182664 B; wifi_rssi=-61 dBm
+System Mode - vegetative
+Grow Preset - vegetative
+Nutrients Allowed - yes
+Hydroponic Mode - dwc (pH re-dose wait 15 min)
+Chemistry Control - adaptive_P
+Water Temperature - 21.87 C
+LDR ADC - 969
+Water Level - -1 % (stage air-gap line 20 %, raw -1 %, FAULT: sensor missing or stuck 0% — auto water off; touch 70 %, safety floor 5 %)
+TDS ADC - 2889
+TDS Approx - 1297 ppm @ 21.9 C water (comp 0.937; target 800-1200 ppm)
+Nutrient Dose - none
+pH Voltage - 1.973 V
+pH Approx (raw) - 6.34 @ 21.9 C water (Nernst 1.0106)
+pH Approx (filtered) - 6.33
+pH Target - 5.5 to 5.8
+pH Dose - none
+Ambient Temp - 23.40 C
+Ambient Humidity - 49.67 %
+CO2 - 1206 ppm
+Grow Light - on (on), brightness 100%, photoperiod 16 h/day, schedule NTP
+WaterLevelPct:-1 WaterTargetPct:20 WaterMaxPct:70 WaterFloorPct:5 PumpOn:0 DrainOn:0 PumpRunMs:0 PumpStartedMs:0 TDSppm:1297 NutrientTdsMin:800 NutrientTdsMax:1200 NutrientDose:0 NutrientDilute:0 pH:6.34 PhTargetMin:5.5 PhTargetMax:5.8 PhDoseUp:0 PhDoseDown:0 CO2ppm:1206
+=================================
+[STORE] Sensor row appended to /sensor_readings.csv (source=esp32)
+[INFLUX] Write failed HTTP -1 (connection refused)
+[DEBUG] --- Sensor read cycle complete ---
+[FW] firmware_version=1.5.2
+[WARN] Water level sensor returned no valid readings
+[DEBUG] pH board voltage - 1.972 V; pH raw - 6.33, filtered - 6.31 @ water 21.9 C (Nernst 1.0106)
+
+[DEBUG] --- Sensor read cycle ---
+[DEBUG] System mode - vegetative
+[DEBUG] Reading water level...
+[WARN] Water level sensor returned no valid readings
+[DEBUG] Water level - raw=-1 %, trusted=-1 % [SENSOR FAULT — missing or stuck 0%] %
+[DEBUG] Re

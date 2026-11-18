@@ -1,0 +1,195 @@
+=== MODE ===
+[DEBUG] DHT11 attempt 3 -> temp=24.00 C, humidity=65.00 %
+
+=== CAL SHOW ===
+[DEBUG] Reading CO2...
+[DEBUG] CO2 raw bytes H=0x6 L=0x9F ??? uint16=1695 int16=1695
+[DEBUG] CO2 -> 1695 ppm (single-shot, uint16)
+[DEBUG] CO2 result - 1695 ppm
+[DEBUG] pH board voltage - 1.802 V; pH raw - 3.71, filtered - 3.71 @ water 22.9 C (Nernst 1.0072)
+[DEBUG] pH board voltage - 1.798 V; pH raw - 3.64, filtered - 3.70 @ water 22.9 C (Nernst 1.0072)
+
+========== SENSOR DATA ==========
+Timestamp (ms) - 26460
+Uptime - 26 s; boots=1; brownouts=0; last_reset=power_on
+Supply - free_heap=183484 B; wifi_rssi=-53 dBm
+System Mode - vegetative
+Grow Preset - vegetative
+Nutrients Allowed - yes
+Hydroponic Mode - dwc (pH re-dose wait 15 min)
+Chemistry Control - adaptive_P
+Water Temperature - 22.87 C
+LDR ADC - 2285
+Water Level - -1 % (stage air-gap line 20 %, raw -1 %, FAULT: sensor missing or stuck 0% ??? auto water off; touch 70 %, safety floor 5 %)
+TDS ADC - 58
+TDS Approx - 21 ppm @ 22.9 C water (comp 0.957; target 800-1200 ppm)
+Nutrient Dose - none
+pH Voltage - 1.798 V
+pH Approx (raw) - 3.64 @ 22.9 C water (Nernst 1.0072)
+pH Approx (filtered) - 3.70
+pH Target - 5.5 to 5.8
+pH Dose - none
+Ambient Temp - 24.10 C
+Ambient Humidity - 63.00 %
+CO2 - 1695 ppm
+Grow Light - animating (on), brightness 0%, photoperiod 16 h/day, schedule NTP
+WaterLevelPct:-1 WaterTargetPct:20 WaterMaxPct:70 WaterFloorPct:5 PumpOn:0 DrainOn:0 PumpRunMs:0 PumpStartedMs:0 TDSppm:21 NutrientTdsMin:800 NutrientTdsMax:1200 NutrientDose:0 NutrientDilute:0 pH:3.64 PhTargetMin:5.5 PhTargetMax:5.8 PhDoseUp:0 PhDoseDown:0 CO2ppm:1695
+=================================
+[STORE] Sensor row appended to /sensor_readings.csv (source=esp32)
+[WARN] MQTT offline ??? telemetry publish skipped (no auto-retry)
+[INFLUX] sensor_reading uploaded
+[DEBUG] --- Sensor read cycle complete ---
+
+========== STAGE: vegetative ==========
+Vegetative: 50 mm drawdown; EC dose then pH correction.
+[CAL] Stored pump calibration:
+  water: not calibrated
+  nutrient: 0.405 mL / 500 ms burst
+  ph_up: 0.312 mL / 500 ms burst
+  ph_down: 0.292 mL / 500 ms burst
+[WARN] Water level sensor returned no valid readings
+[DEBUG] pH board voltage - 1.800 V; pH raw - 3.67, filtered - 3.67 @ water 22.9 C (Nernst 1.0072)
+[DEBUG] pH board voltage - 1.766 V; pH raw - 3.15, filtered - 3.06 @ water 22.9 C (Nernst 1.0072)
+
+[DEBUG] --- Sensor read cycle ---
+[DEBUG] System mode - vegetative
+[DEBUG] Reading water level...
+
+=== STOCK ===
+[WARN] Water level sensor returned no valid readings
+[DEBUG] Water level - raw=-1 %, trusted=-1 % [SENSOR FAULT ??? missing or stuck 0%] %
+[DEBUG] Reading DS18B20...
+[DEBUG] DS18B20 result - 22.94 C
+[DEBUG] Reading analog sensors (LDR, TDS, pH)...
+[DEBUG] Raw ADC on pin 34 -> 2281
+[DEBUG] Raw ADC on pin 35 -> 58
+[DEBUG] pH board voltage - 1.802 V; pH raw - 3.71, filtered - 3.71 @ water 22.9 C (Nernst 1.0070)
+[DEBUG] LDR ADC - 2281
+[DEBUG] TDS ADC - 58
+[DEBUG] TDS 21 ppm @ water 22.9 C (comp coeff 0.959)
+[DEBUG] Reading ambient DHT11...
+[DEBUG] DHT11 attempt 1 -> temp=24.00 C, humidity=65.00 %
+
+=== READ ===
+[DEBUG] DHT11 attempt 2 -> temp=24.00 C, humidity=61.00 %
+[DEBUG] DHT11 attempt 3 -> temp=24.00 C, humidity=65.00 %
+[DEBUG] Reading CO2...
+[DEBUG] CO2 raw bytes H=0x6 L=0x7E ??? uint16=1662 int16=1662
+[DEBUG] CO2 -> 1662 ppm (single-shot, uint16)
+[DEBUG] CO2 result - 1662 ppm
+[DEBUG] pH board voltage - 1.804 V; pH raw - 3.73, filtered - 3.73 @ water 22.9 C (Nernst 1.0070)
+[DEBUG] pH board voltage - 1.799 V; pH raw - 3.66, filtered - 3.70 @ water 22.9 C (Nernst 1.0070)
+
+========== SENSOR DATA ==========
+Timestamp (ms) - 37688
+Uptime - 37 s; boots=1; brownouts=0; last_reset=power_on
+Supply - free_heap=183160 B; wifi_rssi=-52 dBm
+System Mode - vegetative
+Grow Preset - vegetative
+Nutrients Allowed - yes
+Hydroponic Mode - dwc (pH re-dose wait 15 min)
+Chemistry Control - adaptive_P
+Water Temperature - 22.94 C
+LDR ADC - 2281
+Water Level - -1 % (stage air-gap line 20 %, raw -1 %, FAULT: sensor missing or stuck 0% ??? auto water off; touch 70 %, safety floor 5 %)
+TDS ADC - 58
+TDS Approx - 21 ppm @ 22.9 C water (comp 0.959; target 800-1200 ppm)
+Nutrient Dose - none
+pH Voltage - 1.799 V
+pH Approx (raw) - 3.66 @ 22.9 C water (Nernst 1.0070)
+pH Approx (filtered) - 3.70
+pH Target - 5.5 to 5.8
+pH Dose - none
+Ambient Temp - 24.00 C
+Ambient Humidity - 63.67 %
+CO2 - 1662 ppm
+Grow Light - on (on), brightness 100%, photoperiod 16 h/day, schedule NTP
+WaterLevelPct:-1 WaterTargetPct:20 WaterMaxPct:70 WaterFloorPct:5 PumpOn:0 DrainOn:0 PumpRunMs:0 PumpStartedMs:0 TDSppm:21 NutrientTdsMin:800 NutrientTdsMax:1200 NutrientDose:0 NutrientDilute:0 pH:3.66 PhTargetMin:5.5 PhTargetMax:5.8 PhDoseUp:0 PhDoseDown:0 CO2ppm:1662
+=================================
+[STORE] Sensor row appended to /sensor_readings.csv (source=esp32)
+[INFLUX] sensor_reading uploaded
+[DEBUG] --- Sensor read cycle complete ---
+[STOCK] Dosing bottles (estimate from calibration):
+  water: 1000.0 / 1000 mL (100%)
+  nutrient: 991.3 / 1000 mL (99%)
+  ph_up: 591.8 / 600 mL (99%)
+  ph_down: 588.1 / 600 mL (98%)
+[STOCK] Type FILL after you replace a bottle. SETCAP / SETREM to adjust.
+[CAL] Unknown command: READ
+[CAL] Type HELP
+[WARN] Water level sensor returned no valid readings
+[DEBUG] pH board voltage - 1.791 V; pH raw - 3.54, filtered - 3.67 @ water 22.9 C (Nernst 1.0070)
+[DEBUG] pH board voltage - 1.768 V; pH raw - 3.18, filtered - 3.05 @ water 22.9 C (Nernst 1.0070)
+
+[DEBUG] --- Sensor read cycle ---
+[DEBUG] System mode - vegetative
+[DEBUG] Reading water level...
+[WARN] Water level sensor returned no valid readings
+[DEBUG] Water level - raw=-1 %, trusted=-1 % [SENSOR FAULT ??? missing or stuck 0%] %
+[DEBUG] Reading DS18B20...
+[DEBUG] DS18B20 result - 22.87 C
+[DEBUG] Reading analog sensors (LDR, TDS, pH)...
+[DEBUG] Raw ADC on pin 34 -> 2283
+[DEBUG] Raw ADC on pin 35 -> 56
+[DEBUG] pH board voltage - 1.803 V; pH raw - 3.72, filtered - 3.72 @ water 22.9 C (Nernst 1.0072)
+[DEBUG] LDR ADC - 2283
+[DEBUG] TDS ADC - 56
+[DEBUG] TDS 20 ppm @ water 22.9 C (comp coeff 0.957)
+[DEBUG] Reading ambient DHT11...
+[DEBUG] DHT11 attempt 1 -> temp=24.00 C, humidity=65.00 %
+[DEBUG] DHT11 attempt 2 -> temp=24.00 C, humidity=61.00 %
+
+=== PHSHOW ===
+[DEBUG] DHT11 attempt 3 -> temp=24.00 C, humidity=65.00 %
+[DEBUG] Reading CO2...
+
+=== TDSSHOW ===
+[DEBUG] CO2 raw bytes H=0x6 L=0x86 ??? uint16=1670 int16=1670
+[DEBUG] CO2 -> 1670 ppm (single-shot, uint16)
+[DEBUG] CO2 result - 1670 ppm
+[DEBUG] pH board voltage - 1.806 V; pH raw - 3.76, filtered - 3.76 @ water 22.9 C (Nernst 1.0072)
+[DEBUG] pH board voltage - 1.801 V; pH raw - 3.69, filtered - 3.69 @ water 22.9 C (Nernst 1.0072)
+
+========== SENSOR DATA ==========
+Timestamp (ms) - 48957
+Uptime - 48 s; boots=1; brownouts=0; last_reset=power_on
+Supply - free_heap=183160 B; wifi_rssi=-52 dBm
+System Mode - vegetative
+Grow Preset - vegetative
+Nutrients Allowed - yes
+Hydroponic Mode - dwc (pH re-dose wait 15 min)
+Chemistry Control - adaptive_P
+Water Temperature - 22.87 C
+LDR ADC - 2283
+Water Level - -1 % (stage air-gap line 20 %, raw -1 %, FAULT: sensor missing or stuck 0% ??? auto water off; touch 70 %, safety floor 5 %)
+TDS ADC - 56
+TDS Approx - 20 ppm @ 22.9 C water (comp 0.957; target 800-1200 ppm)
+Nutrient Dose - none
+pH Voltage - 1.801 V
+pH Approx (raw) - 3.69 @ 22.9 C water (Nernst 1.0072)
+pH Approx (filtered) - 3.69
+pH Target - 5.5 to 5.8
+pH Dose - none
+Ambient Temp - 24.00 C
+Ambient Humidity - 63.67 %
+CO2 - 1670 ppm
+Grow Light - on (on), brightness 100%, photoperiod 16 h/day, schedule NTP
+WaterLevelPct:-1 WaterTargetPct:20 WaterMaxPct:70 WaterFloorPct:5 PumpOn:0 DrainOn:0 PumpRunMs:0 PumpStartedMs:0 TDSppm:20 NutrientTdsMin:800 NutrientTdsMax:1200 NutrientDose:0 NutrientDilute:0 pH:3.69 PhTargetMin:5.5 PhTargetMax:5.8 PhDoseUp:0 PhDoseDown:0 CO2ppm:1670
+=================================
+[STORE] Sensor row appended to /sensor_readings.csv (source=esp32)
+[INFLUX] sensor_reading uploaded
+[DEBUG] --- Sensor read cycle complete ---
+[DEBUG] pH board voltage - 1.777 V; pH raw - 3.32, filtered - 3.18 @ water 22.9 C (Nernst 1.0072)
+[PH-CAL] --- probe calibration ---
+  state=idle  calibrated=yes
+  slope=15.3696  offset=-23.9698
+  water T=22.9 C  Nernst factor=1.0072
+  live board V=1.7773  ??? pH 3.347 (raw) / 3.321 (temp-comp)
+  stored acid V=1.8198 @ pH 4.00
+  stored alkali V=2.1568 @ pH 9.18
+[DEBUG] Raw ADC on pin 35 -> 56
+[TDS-CAL] --- Grove TDS probe calibration ---
+  state=idle  calibrated=no (k=1.0 defaults)
+  kValue=1.0000
+  live V=0.0451  T=22.9 C  ??? 19.9 ppm
+

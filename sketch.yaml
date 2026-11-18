@@ -1,0 +1,13 @@
+# Arduino CLI / IDE 2 board defaults for this sketch.
+# PartitionScheme=no_ota: ~1.47MB firmware needs >1.2MB app; keeps 2MB LittleFS
+# for CSV (CSV_MAX_BYTES ≈ 1.4MB). Do not use Default or Minimal SPIFFS.
+default_fqbn: esp32:esp32:esp32:UploadSpeed=921600,CPUFreq=240,FlashFreq=80,FlashMode=qio,FlashSize=4M,PartitionScheme=no_ota,DebugLevel=none,PSRAM=disabled,LoopCore=1,EventsCore=1,EraseFlash=none,JTAGAdapter=default,ZigbeeMode=default
+# Omit default_port: a Linux /dev/ttyUSB0 here makes arduino-cli hang on Windows
+# waiting for a device that will never appear. Set COM port at upload time (-p COMx).
+default_protocol: serial
+profiles:
+  esp32-dev:
+    # Use the already-installed board package under ~/.arduino15/packages.
+    # Do not pin platforms: here — that re-downloads ~5GB into
+    # ~/.arduino15/internal and fills a small ChromeOS Linux disk.
+    fqbn: esp32:esp32:esp32:UploadSpeed=921600,CPUFreq=240,FlashFreq=80,FlashMode=qio,FlashSize=4M,PartitionScheme=no_ota,DebugLevel=none,PSRAM=disabled,LoopCore=1,EventsCore=1,EraseFlash=none,JTAGAdapter=default,ZigbeeMode=default

@@ -1,0 +1,5 @@
+time_utc,event,note
+2026-09-16T10:40:00+00:00,probe_to_tank,TDS jumps 0→~425 ppm as probe leaves buffer / enters reservoir; not a pH dose
+2026-09-16T10:55:00+00:00,tank_settle_start,"Tank water monitoring after calibration; pH ~5.5–6.1, TDS ~425–431"
+2026-09-17T00:00:00+00:00,no_auto_dose,"Influx shows stage=sensor_baseline, ph_*_pump_on=0, ph_session_ml=0 for entire archive"
+2026-09-20T05:00:00+00:00,requery_empty,"Re-pull 2026-08-01→2026-09-21: no ph_session_ml>0, no pump_on>0, no control_event rows; preliminary ~1-month-ago dosing not in this bucket"

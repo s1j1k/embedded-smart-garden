@@ -1,0 +1,14 @@
+{
+    "recorded_at":  "2026-09-25T21:38:02+10:00",
+    "trust_after_wait_s":  60,
+    "ph_filtered_mean":  6.09,
+    "ph_span":  0.04,
+    "ph_samples":  [
+                       6.07,
+                       6.11
+                   ],
+    "tds_ppm_mean":  1242,
+    "water_temp_c":  22.87,
+    "auto_control":  "paused",
+    "note":  "Operator: trust pH after 60s settle with 5V on; 2026-09-16 cal in use"
+}

@@ -1,0 +1,24 @@
+{
+  "recorded_at": "2026-09-26T12:45:00+10:00",
+  "method": "geometry_estimate",
+  "tank_mm": {"width": 280, "length": 400, "height": 120},
+  "freeboard_from_top_mm": 55,
+  "water_column_mm": 65,
+  "ml_per_mm_height": 112.0,
+  "volume_ml": 7280.0,
+  "volume_L": 7.28,
+  "conservative_volume_L": 6.55,
+  "conservative_derate": 0.9,
+  "dose_sizing": {
+    "nutrient_full_ml_per_L": 5.0,
+    "nutrient_full_tank_ml": 36.4,
+    "nutrient_half_tank_ml": 18.2,
+    "nutrient_initial_max_dose_ml": 0.5,
+    "ph_label_ml_per_100L_per_unit": "10-15 (use 10 conservative)",
+    "ph_ml_per_unit_at_6_55L": 0.66,
+    "ph_initial_max_dose_ml": 0.15,
+    "ph_bottle_target": 6.5
+  },
+  "water_pump_cal": "waived_by_operator",
+  "note": "Operator dimensions 280x400x120; fill to 55 mm freeboard (net-pot touch). Do not trust Grove level."
+}
